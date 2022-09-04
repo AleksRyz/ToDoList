@@ -25,6 +25,15 @@ body {
 .gray {
   color: #BDBDBD;
 }
+textarea {
+	outline: none;
+	-moz-appearance: none;
+   width: 100%;
+   height: auto;
+   overflow: hidden;
+   overflow-wrap: break-word;
+   resize: none;
+}
 .task-title--done {
   text-decoration: line-through;
   color: #CDCDCD;
@@ -33,6 +42,7 @@ body {
   display: flex;
   column-gap: 5px;
 }
+
 .notify-holder {
   height: 60px;
   margin-bottom: 20px;
