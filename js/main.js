@@ -61,7 +61,7 @@ function deleteTask(event) {
       if (task.id == id) return true;
    });
    // удаляем задачу из массива с задачами  
-   console.log(index);
+
    tasks.splice(index, 1);
    saveToLocalStorage();
 
@@ -85,9 +85,9 @@ function doneTask(event) {
    task.done = !task.done;
    saveToLocalStorage();
 
-   const taskTitle = parentNode.querySelector('.task-title');
-   taskTitle.classList.toggle('task-title--done');
-   console.log(task);
+   const taskTitle = parentNode.querySelector('.task-item__title');
+   taskTitle.classList.toggle('--done');
+
 }
 
 
@@ -170,13 +170,12 @@ function saveToLocalStorage() {
    localStorage.setItem('tasks', JSON.stringify(tasks))
 }
 
-
 function renderTask(task) {
    // формируем CSS класс
-   const cssClass = task.done ? "task-title task-title--done" : "task-title"
+   const cssClass = task.done ? "task-item__title --done" : "task-item__title"
 
    // задача
-   const taskHTML = `<li id="${task.id}" class="list-group-item d-flex justify-content-between task-item">
+   const taskHTML = `<li id="${task.id}" class="list-group-item task-item">
                         <span class="${cssClass}">${task.text}</span>
                         <div class="task-item__buttons">
                            <button type="button" data-action="done" class="btn-action">

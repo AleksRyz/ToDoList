@@ -1,52 +1,137 @@
+
+@import url("nullstyle.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
+
 html, body {
   min-height: 100vh;
 }
 
 body {
-  background-color: #E4E5E7;
+  background-color: #3F72AF;
   padding-top: 30px;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
 }
-.aside {
-  height: 400px;
+
+.container{
+   min-width: 1400px;
+   margin: 0 auto;
+   background: #F9F7F7;
+   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
+   border-radius: 10px;
 }
-.main {
-  height: 400px;
+
+/* ===================Form======================== */
+.add-task {
+   padding: 20px 0;
 }
-.d-flex {
-  display: flex;
+.add-task__header {
+   font-weight: 400;
+   font-size: 40px;
+   line-height: 46px;
+   text-align: center;
 }
-.task-title {
+
+.add-task__body {
+   padding: 40px 30px;
+}
+.add-task__form{
+   display: flex;
+   background: #DBE2EF;
+   border: 1px solid rgba(177, 177, 177, 0.4);
+   border-radius: 5px;
+   height: 50px;
+}
+.form__input {
+ flex: 1 1 auto;
+ 
+ background:inherit;
+ padding-left: 20px;
+font-size: 20px;
+
+}
+.form__btn {
+   background: #3F72AF;
+   border-radius: 0px 5px 5px 0px;
+   width: 65px;
+   position: relative;
+}
+
+.form__btn::after {
+   content: " ";
+   position: absolute;
+   display: block;
+   background-color: #fff;
+   height: 3px;
+   top: 50%;
+   left: 22%;
+   right: 22%;
+   z-index: 9;
+   border-radius: 5px;
+
+ }
+ .form__btn::before {
+   content: " ";
+   position: absolute;
+   display: block;
+   background-color: #fff;
+   width: 3px;
+   right: 48%;
+   top: 20%;
+   bottom:  20%;
+   z-index: 9;
+   border-radius: 5px;
+ }
+
+/* ===================/Form======================== */
+
+
+
+
+
+
+.list-group{
+   display: flex;
+   flex-direction: column;
+   padding: 20px;
+}
+
+.task-item{
+   width: 100%;
+   margin-bottom: 10px;
+
+   display: flex;
+}
+
+.task-item__title{
+   flex: 1 1 auto;
+   font-size: 20px;
+}
+
+
+
+.task-item__title {
   font-weight: 400;
   padding-top: 5px;
 }
-.gray {
-  color: #BDBDBD;
-}
-textarea {
-	outline: none;
-	-moz-appearance: none;
-   width: 100%;
-   height: auto;
-   overflow: hidden;
-   overflow-wrap: break-word;
-   resize: none;
-}
-.task-title--done {
+
+.--done {
   text-decoration: line-through;
   color: #CDCDCD;
 }
+
 .task-item__buttons {
   display: flex;
   column-gap: 5px;
 }
 
-.notify-holder {
-  height: 60px;
-  margin-bottom: 20px;
-}
+
 .empty-list {
   display: flex;
   flex-direction: column;
@@ -60,10 +145,14 @@ textarea {
   margin-bottom: 15px;
   font-weight: 300;
 }
-.empty-list__icon {
-  color: #42BE2A;
-  font-size: 32px;
-}
+
+
+
+
+
+
+
+
 .btn-action {
     background-color: #e0e5ea;
     padding: 8px 10px;
@@ -87,21 +176,3 @@ textarea {
   pointer-events: none;
 }
 
-.none {
-  display: none !important;
-}
-
-.float-right {
-  float: right;
-}
-.copyright {
-  margin-top: 40px;
-  font-size: 14px;
-  color: gray;
-  text-align: center;
-  margin-bottom: 30px;
-  /* position: absolute; */
-  /* bottom: 30px; */
-  /* left: 0; */
-  /* right: 0; */
-}
