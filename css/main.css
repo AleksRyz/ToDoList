@@ -4,14 +4,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
 
 
-html, body {
+html {
   min-height: 100vh;
+  font-size: 61.5%;
+
 }
 
 body {
+  min-height: 100vh;
+
   background-color: #3F72AF;
   padding-top: 30px;
-  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -20,20 +23,49 @@ body {
 }
 
 .container{
-   min-width: 1400px;
-   margin: 0 auto;
+   margin: 0 15%;
    background: #F9F7F7;
    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
    border-radius: 10px;
 }
 
+ol {
+	list-style-type: none; 
+	counter-reset: num;
+	margin: 0 0 0 45px;
+	padding: 15px 0 5px 34px;
+	font-size: 16px;
+}
+ol li {
+	position: relative;	
+	margin: 0 0 0 0;
+	padding: 0 0 10px 0;
+	line-height: 1.4;
+}
+ol li:before {
+	content: counter(num); 
+	counter-increment: num;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: -34px;
+	width: 28px;
+	height: 28px;
+	background: #5780b2;
+   border-radius: 5px;
+	color: #f1f1f1;
+	text-align: center;
+	line-height: 28px;
+	font-size: 1.6rem;
+}
+
 /* ===================Form======================== */
 .add-task {
-   padding: 20px 0;
+   padding-top: 20px;
 }
 .add-task__header {
    font-weight: 400;
-   font-size: 40px;
+   font-size: 4rem;
    line-height: 46px;
    text-align: center;
 }
@@ -43,17 +75,15 @@ body {
 }
 .add-task__form{
    display: flex;
-   background: #DBE2EF;
-   border: 1px solid rgba(177, 177, 177, 0.4);
-   border-radius: 5px;
    height: 50px;
 }
 .form__input {
  flex: 1 1 auto;
- 
- background:inherit;
+ border: 1px solid rgba(177, 177, 177, 0.4);
+ border-radius: 5px 0 0 5px;
+ background: #DBE2EF;
  padding-left: 20px;
-font-size: 20px;
+ font-size: 1.8rem;
 
 }
 .form__btn {
@@ -61,6 +91,16 @@ font-size: 20px;
    border-radius: 0px 5px 5px 0px;
    width: 65px;
    position: relative;
+}
+
+.form__btn:hover {
+   background: #1d5ca8;
+   /* background: #204c83; */
+}
+.form__btn:active {
+   background: #204c83;
+   top: .1rem;
+   left: .1rem;
 }
 
 .form__btn::after {
@@ -91,30 +131,44 @@ font-size: 20px;
 
 /* ===================/Form======================== */
 
-
-
-
-
+.card{
+   border-top: 1px solid rgba(0, 0, 0, 0.5);
+   margin: 10px;
+}
 
 .list-group{
    display: flex;
    flex-direction: column;
-   padding: 20px;
+   margin: 20px;
+
+
 }
 
 .task-item{
    width: 100%;
    margin-bottom: 10px;
+   padding: 5px 5px 5px 10px;
 
    display: flex;
+
+   border: 1px solid rgba(177, 177, 177, 0.4);
+   border-radius: 5px;
+   background: #DBE2EF;
+
+   word-break:break-all;
+   position: relative;
+}
+
+.task-item:hover{
+   background: #cad7ee;
+   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .task-item__title{
    flex: 1 1 auto;
-   font-size: 20px;
+   font-size: 1.8rem;
+   padding-top: 0;
 }
-
-
 
 .task-item__title {
   font-weight: 400;
@@ -123,14 +177,13 @@ font-size: 20px;
 
 .--done {
   text-decoration: line-through;
-  color: #CDCDCD;
+  color: #b2b1b1;
 }
 
 .task-item__buttons {
   display: flex;
   column-gap: 5px;
 }
-
 
 .empty-list {
   display: flex;
@@ -141,20 +194,14 @@ font-size: 20px;
   padding-bottom: 1em;
 }
 .empty-list__title {
-  font-size: 28px;
+  font-size: 1.8rem;
   margin-bottom: 15px;
   font-weight: 300;
 }
 
-
-
-
-
-
-
-
 .btn-action {
-    background-color: #e0e5ea;
+    position: relative;
+    background-color: inherit;
     padding: 8px 10px;
     cursor: pointer;
     border: 0;
@@ -165,14 +212,17 @@ font-size: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: box-shadow .2s, border-color .2s;
 }
 
 .btn-action:hover {
     background-color: #e0e5ea;
     opacity: 1;
 }
-
+.btn-action:active {
+   top: .1rem;
+   left: .1rem;
+}
 .btn-action img {
   pointer-events: none;
 }
-
